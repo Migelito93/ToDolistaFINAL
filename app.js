@@ -31,11 +31,12 @@ const renderTodos = () => {
     ul.append(li);
   })
 }
-// Denna hanterar hela flödet med att lägga till och visa upp tillagda todo
+// Denna hanterar hela flödet med att lägga till och visa upp tillagda todo SAMT ändrar färgen på "Add" till röd. 
 const handleAddingTodos = e => {
   e.preventDefault();
   addToArray();
   renderTodos();
+  $('#btn').css('color', '#ff0000');
 }
 
 // denna tar bort de line-through:ade todo-items:ena
@@ -47,5 +48,6 @@ const deleteTodos = () => {
   });
 }
 // eventlyssnare med jQuery
+
 btnClr.click(deleteTodos);
 button.click(handleAddingTodos);
